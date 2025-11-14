@@ -9,5 +9,5 @@ const backend = defineBackend({
 
 const { amplifyDynamoDbTables } = backend.data.resources.cfnResources;
 for (const table of Object.values(amplifyDynamoDbTables)) {
-  table.deletionProtectionEnabled = true;
+  table.deletionProtectionEnabled = false;
 }
