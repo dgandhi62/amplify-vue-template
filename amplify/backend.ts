@@ -7,7 +7,7 @@ const backend = defineBackend({
   data,
 });
 
-for (const table of Object.values(backend.data.resources.cfnResources.amplifyDynamoDbTables))
-{   
-    (table as any).cfnTable.addPropertyOverride('DeletionProtectionEnabled', false);
+const { amplifyDynamoDbTables } = backend.data.resources.cfnResources;
+for (const table of Object.values(amplifyDynamoDbTables)) {
+  table.deletionProtectionEnabled = true;
 }
